@@ -77,14 +77,15 @@ class Regressor(nn.Module):
         super(Regressor, self).__init__()
         self.features = nn.Sequential(
             nn.Conv2d(in_channels, 4096, kernel_size=5, padding=0),
-            nn.Dropout(p=dropout_rate),
             nn.ReLU(),
-
+            nn.Dropout(p=dropout_rate),
+            
             nn.Conv2d(4096, 4096, kernel_size=1, padding=0),
-            nn.Dropout(p=dropout_rate),
             nn.ReLU(),
+            nn.Dropout(p=dropout_rate),
 
             nn.AvgPool2d(kernel_size=3, padding=0),
+            nn.ReLU(),
             nn.Conv2d(4096, num_class, kernel_size=1, padding=0),
             nn.Flatten(),
         )
