@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 
+from DataSource import DataSource
 class ExtractorAlexNet(nn.Module):
     def __init__(self, in_channels=1):
         super(ExtractorAlexNet, self).__init__()

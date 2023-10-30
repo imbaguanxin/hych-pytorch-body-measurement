@@ -2,6 +2,7 @@ import torch
 from torchvision.io import read_image
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
+from DataSource import DataSource
 import h5py
 
 class BodyMeasurementDataset(Dataset):
@@ -36,7 +37,9 @@ class BodyMeasurementDataset(Dataset):
 
 
 if __name__ == '__main__':
-    dataset = BodyMeasurementDataset('test_female.h5')
+    
+    dataSource = DataSource()
+    dataset = BodyMeasurementDataset(dataSource.getTestH5Path())
     dataloader = DataLoader(dataset, batch_size=4, shuffle=True)
     for front, side, label in dataloader:
         print(front.dtype)
