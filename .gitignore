@@ -135,7 +135,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/
@@ -190,3 +189,6 @@ pyrightconfig.json
 model/
 runs/
 *.csv
+
+datasets
+.idea/

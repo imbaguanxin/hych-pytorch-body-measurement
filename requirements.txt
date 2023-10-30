@@ -1,0 +1,10 @@
+torch~=2.1.0
+scipy~=1.11.3
+h5py~=3.10.0
+torchvision~=0.16.0
+python-dotenv~=1.0.0
+matplotlib~=3.8.0
+numpy~=1.25.2
+tqdm~=4.66.1
+tensorboard~=2.15.0
+pandas~=2.1.2
