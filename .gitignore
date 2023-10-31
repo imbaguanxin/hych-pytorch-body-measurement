@@ -192,3 +192,6 @@ runs/
 
 datasets
 .idea/
+.env
+*.onnx
+output/ckpt

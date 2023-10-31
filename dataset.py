@@ -37,12 +37,13 @@ class BodyMeasurementDataset(Dataset):
 
 
 if __name__ == '__main__':
-    
-    dataSource = DataSource()
-    dataset = BodyMeasurementDataset(dataSource.getTestH5Path())
+    from dotenv import load_dotenv
+    import os
+    load_dotenv()
+
+    dataset = BodyMeasurementDataset(os.path.join(os.environ.get("DATAFORM_PATH"), "train_female.h5"))
     dataloader = DataLoader(dataset, batch_size=4, shuffle=True)
     for front, side, label in dataloader:
-        print(front.dtype)
-        print(side.dtype)
-        print(label.dtype)
+        print(f"shapes: {front.shape}, {side.shape}, {label.shape}")
+        print(f"dtypes: {front.dtype}, {side.dtype}, {label.dtype}")
         break
