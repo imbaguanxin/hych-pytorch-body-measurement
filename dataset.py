@@ -2,7 +2,6 @@ import torch
 from torchvision.io import read_image
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
-from DataSource import DataSource
 import h5py
 
 class BodyMeasurementDataset(Dataset):
